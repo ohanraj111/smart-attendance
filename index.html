@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Attendance System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.jpg" alt="School Logo" class="logo">
+    <h1>Smart Attendance System</h1>
+    <p class="date" id="todayDate"></p>
+
+    <form id="classForm">
+      <select id="department" required>
+        <option value="">Select Department</option>
+        <option>Computer Science</option>
+        <option>Mechanical</option>
+        <option>Electrical</option>
+        <option>Civil</option>
+        <option>Business Admin</option>
+      </select>
+
+      <select id="year" required>
+        <option value="">Select Year</option>
+        <option>1st Year</option>
+        <option>2nd Year</option>
+        <option>3rd Year</option>
+        <option>4th Year</option>
+      </select>
+
+      <select id="section" required>
+        <option value="">Select Section</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="attendanceTable">
+        <tr>
+          <td>John Doe</td>
+          <td>john@example.com</td>
+          <td>
+            <label><input type="radio" name="status0" value="Present" checked> Present</label>
+            <label><input type="radio" name="status0" value="Absent"> Absent</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>jane@example.com</td>
+          <td>
+            <label><input type="radio" name="status1" value="Present" checked> Present</label>
+            <label><input type="radio" name="status1" value="Absent"> Absent</label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button onclick="sendEmails()">Send Attendance</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
